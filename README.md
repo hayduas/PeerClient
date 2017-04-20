@@ -1,2 +1,2 @@
 "# PeerClient" 
-A Console-based torrent client
+A Console based torrent-like client
