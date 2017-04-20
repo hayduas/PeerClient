@@ -46,7 +46,7 @@ char *userName,*fileName=0;
 struct fileStruct filesFound[MAX_FILES];
 
 
-/*!
+/*
  * This func is a replacement to the 'getch()' function found on the windows-based "conio.h" library. This function is
  * essential for the "getString()" function.
  */
@@ -65,7 +65,7 @@ int getch()
   return ch;
 }
 
-/*!
+/*
  * Gets a limited input from the user - characters that are pre-defined. 
  * Any other characters will be ignored. Returnes a dynamic array
  * maxChars - Number of maximum chars allowed
@@ -85,7 +85,6 @@ char *getString(int maxChars,int typeOfChars,char okChars[])
 	 okChars=abcNum;
 
  okCharsLen=strlen(okChars);
-
  st = (char *) malloc(maxChars+1);	// Allocate mem for output
 
  do
@@ -93,7 +92,6 @@ char *getString(int maxChars,int typeOfChars,char okChars[])
 	do
 	{
 	  i=0;
-
 	  ch=getch();
 
 	  if (ch==10) // User pressed ENTER
@@ -116,13 +114,12 @@ char *getString(int maxChars,int typeOfChars,char okChars[])
 		 stPos--;
 	  	 st[stPos]=0;
 	  }
-
-						     // Any other key the user pressed -
+	
+	  // Any other key the user pressed -
 	  while ((ch!=okChars[i])&&(i<=okCharsLen))  // checks weather the input is a member of okChars
 		i++;
 
-
-	}while (i>=okCharsLen); // DO
+	} while (i>=okCharsLen); // DO
 
 	if ((!finish)&&(stPos<maxChars))  // If all ok, adds the input to the "st" string
 	{
@@ -131,8 +128,7 @@ char *getString(int maxChars,int typeOfChars,char okChars[])
 		stPos++;		// Increase position
 	}
 
-
- }while (!finish); // DO
+ } while (!finish); // DO
 
  for (i=stPos;i<maxChars+1;i++)    // Add NULL
    st[stPos]=0;
@@ -1180,9 +1176,6 @@ void listenToPeersUdp()
 		 	printf("\n\r%s MSG: %s",msgType,tmp);//we will print"username says:"
 
 		 	}
-
-
-
 	}
 
 } /*listenToPeersUdp*/
@@ -1223,7 +1216,6 @@ void sendMessageToPeerUdp(int ud)
 
 
 } /*sendMessageToPeerUdp*/
-
 
 
 /*
